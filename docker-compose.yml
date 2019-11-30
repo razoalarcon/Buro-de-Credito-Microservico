@@ -1,0 +1,35 @@
+version: '3'
+
+#Declarar los servicios
+#depends_on para ligar conexion entre contenedores
+#environment instrucciones para el uso de bd, usuario y pass
+# adicionalamente para cargar archivo de inicializacion mongo-init.js
+# en settings de docker en la pestaña share drives debe estar habilitado el drive
+# de no hacerlo marca error de drive no compartido
+services:
+  catclientes:
+    container_name: apiclientes
+    image: api_clientes
+    build: .
+    ports:
+      - '1500:1500' 
+    networks:
+      - domain.parties 
+    depends_on:
+      - database
+  database:
+    container_name: mongoserver
+    image: mongo
+    environment:
+      - MONGO_INITDB_DATABASE=galeria
+      - MONGO_INITDB_ROOT_USERNAME=apiuser
+      - MONGO_INITDB_ROOT_PASSWORD=apipassword
+    volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    ports:
+      - '27017:27017'
+    networks:
+      - domain.parties 
+networks:
+  domain.parties:
+    external: true  
