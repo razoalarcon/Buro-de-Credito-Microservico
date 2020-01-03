@@ -5,7 +5,7 @@ db.createUser({
     roles: [
         {
             role:"readWrite",
-            db: "galeria"
+            db: "customer"
         }
     ]
 });
@@ -17,12 +17,20 @@ db.grantRolesToUsers("apiuser",["readWrite"]);
 db.auth('apiuser','apipassword');
 
 //Crear la db 
-db = db.getSiblingDB('galeria');
+db = db.getSiblingDB('customer');
 
 //Crear colleccion y fijar creacion de db
 db.catclientes_ga.insertMany([
-{
-    
-}
-
+    {
+       
+        "Numero_cliente": 1001,
+        "Autoriza_consulta_bc": true,
+        "Autoriza_uso_comercial": true
+    },
+    {
+        "Numero_cliente": 1002,
+        "Autoriza_consulta_bc": true,
+        "Autoriza_uso_comercial": true
+    }
 ]);
+

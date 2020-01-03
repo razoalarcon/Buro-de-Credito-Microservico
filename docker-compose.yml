@@ -21,7 +21,7 @@ services:
     container_name: mongoserver
     image: mongo
     environment:
-      - MONGO_INITDB_DATABASE=galeria
+      - MONGO_INITDB_DATABASE=customer
       - MONGO_INITDB_ROOT_USERNAME=apiuser
       - MONGO_INITDB_ROOT_PASSWORD=apipassword
     volumes:

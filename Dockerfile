@@ -1,4 +1,5 @@
-FROM node: 9-slim
+
+FROM node:9-slim
 RUN mkdir / src
 WORKDIR /src 
 COPY package* .json ./

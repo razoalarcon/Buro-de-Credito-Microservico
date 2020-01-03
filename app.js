@@ -6,7 +6,7 @@ const MongoDBUrl = require('./keys');
 const Controller = require('./controllers/admin');
 
 //----------------------------------------------------------------------------------------
-//2.-Configurar web server y parsee los datos
+//2.-Configurar web server y parsear los datos
 const app = express();
 const port = 2000;
 app.use(bodyParser.json());
@@ -27,8 +27,6 @@ app.listen(port, () => {
     console.log('Server Inicializado en el puerto: ' + port);
 
     mongoose.connect(MongoDBUrl.conn, {useNewUrlParser: true, useUnifiedTopology: true}).then(() => {
-        console.log ('Server mongodb Conectado...')
+         console.log ('Server mongodb Conectado...')
     }, err => {console.log(err)});
 });
-
-    //----------------------------------------------------------------------------------------
