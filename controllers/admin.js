@@ -9,17 +9,17 @@ exports.bcinq  = function (req, res) {
     }).sort({Numero_cliente:1});
 };
 exports.bcAdd = (req, res) => {
-    buro = new  BC({
+    customer = new  BC({
         Numero_cliente: req.body.Numero_cliente,
         Autoriza_consulta_bc: req.body.Autoriza_consulta_bc,
         Autoriza_uso_comercial: req.body.Autoriza_uso_comercial
             
     });
     
-    console.log(buro);
-    buro.save(function (err, client) {
+    console.log(customer);
+    customer.save(function (err, client) {
         if (err) return console.error(err);
         // console.log(tour.tourName + " insertado en la coleccion tours...");
-        res.send(buro.Numero_cliente + " insertado en la coleccion ...");
+        res.send(customer.Numero_cliente + " insertado en la coleccion ...");
     });
 }
