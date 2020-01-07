@@ -121,6 +121,11 @@ _Resumen de creación_
 > * Editar el package.json en la línea script: "start":"node app.js"
 > * Crear el esquema de la BD a usar
 
+_Encender puerto y servidor mongo_
+
+```Terminal
+node app.js
+```
 
 # CONTENEDORES
 _cadena de conexion,considerando el usuario y password_
