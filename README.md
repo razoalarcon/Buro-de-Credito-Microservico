@@ -331,8 +331,7 @@ docker ps
 ```
 
 ## Desarrollo ✒️
-
-* **Miguel Alarcon** - *Versión Inicial* - [razoalarcon](https://github.com/razoalarcon/)
+*Versión Inicial* - [razoalarcon](https://github.com/razoalarcon/)
 
 
 
